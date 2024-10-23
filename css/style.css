@@ -1,0 +1,82 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Heading style */
+header h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* General section styles */
+.menu-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Menu item styles */
+.menu-item {
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+}
+
+/* Section title styling */
+.menu-item .title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffcccc; /* change color for each section as needed */
+    padding: 5px 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.menu-item.chicken .title {
+    background-color: #ffcccc;
+}
+
+.menu-item.beef .title {
+    background-color: #ff9999;
+}
+
+.menu-item.sushi .title {
+    background-color: #ffffcc;
+}
+
+/* Responsive layout for desktop */
+@media (min-width: 992px) {
+    .menu-item {
+        width: calc(33.333% - 20px); /* 3 equal sections with gaps */
+    }
+}
+
+/* Responsive layout for tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    .menu-item {
+        width: calc(50% - 20px); /* 2 equal sections on the first row */
+    }
+    .menu-item.sushi {
+        width: 100%; /* Sushi takes full width in the second row */
+    }
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 767px) {
+    .menu-item {
+        width: 100%; /* Each section takes full width */
+    }
+}
